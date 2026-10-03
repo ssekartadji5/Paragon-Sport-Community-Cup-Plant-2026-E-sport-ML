@@ -26,7 +26,7 @@ h1{margin:0;font-size:24px;letter-spacing:1px}header small{color:#c8ccd4}.live{b
 </head>
 <body>
 <main class="app">
-<header><div><h1>Sport Community Cup Plant - 2026</h1><small>PARAGON E-SPORT • Mobile Legend Tournament</small></div><div class="mode"><button type="button" id="tvMode">TV DISPLAY</button></div><div class="live" id="liveBadge">● LIVE</div><button type="button" id="adminMode" aria-label="Buka Admin Control" title="Admin Control">ADMIN</button></header>
+<header><div><h1>Sport Community Cup Plant - 2026</h1><small>PARAGON E-SPORT • Mobile Legend Tournament</small></div><div class="live" id="liveBadge">● LIVE</div><button type="button" id="adminMode" aria-label="Buka Admin Control" title="Admin Control">ADMIN</button></header>
 <div class="wrap">
 <section class="hero"><div><h2>MOBILE LEGEND - ROUND OF 32</h2></div></section>
 <section class="board"><div class="rounds" id="bracket"></div></section>
@@ -50,7 +50,7 @@ const defaults=Array.from({length:32},(_,i)=>"Team "+String(i+1).padStart(2,"0")
 const roundDefs=[{title:"ROUND OF 32",count:16,start:1},{title:"ROUND OF 16",count:8,start:17},{title:"QUARTER FINAL",count:4,start:25},{title:"SEMIFINAL",count:2,start:29},{title:"GRAND FINAL",count:1,start:31}];
 let matches=[],currentMatch=1,thirdPlace="";
 const $=id=>document.getElementById(id);
-function setMode(mode){document.body.className=mode==="tv"?"is-tv":"is-admin";$("adminMode").classList.toggle("active",mode==="admin");$("tvMode").classList.toggle("active",mode==="tv");try{localStorage.setItem("bracketMode",mode)}catch(e){}}
+function setMode(mode){document.body.className=mode==="tv"?"is-tv":"is-admin";$("adminMode").classList.toggle("active",mode==="admin");try{localStorage.setItem("bracketMode",mode)}catch(e){}}
 function buildInputs(){ $("teamInputs").innerHTML=defaults.map((x,i)=>'<input class="teamInput" data-i="'+i+'" value="'+x+'">').join(""); }
 function initMatches(){
  const names=[...document.querySelectorAll(".teamInput")].map((el,i)=>el.value.trim()||"TBD "+String(i+1).padStart(2,"0"));
@@ -110,7 +110,7 @@ buildInputs();initMatches();
 $("generate").onclick=initMatches;$("reset").onclick=()=>{buildInputs();thirdPlace="";initMatches()};
 $("matchSelect").onchange=e=>loadMatch(Number(e.target.value));$("update").onclick=update;$("finish").onclick=finish;
 $("saveThird").onclick=()=>{const v=$("thirdPlace").value.trim();if(!v){alert("Nama Juara 3 harus diisi.");return}thirdPlace=v;const tp=matches.find(x=>x.id===32);tp.winner=v;tp.status="FINISHED";render()};
-$("adminMode").onclick=()=>{const p=prompt("Masukkan password Admin");if(p==="SCC2026"){setMode("admin")}else if(p!==null){alert("Password salah.")}};$("tvMode").onclick=()=>setMode("tv");
+$("adminMode").onclick=()=>{const p=prompt("Masukkan password Admin");if(p==="SCC2026"){setMode("admin")}else if(p!==null){alert("Password salah.")}};
 setMode("tv");
 })();
 </script>
