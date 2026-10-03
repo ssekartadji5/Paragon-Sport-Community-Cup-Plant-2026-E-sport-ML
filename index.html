@@ -1,24 +1,19 @@
-<!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Paragon E-Sport — Sport Community Cup</title>
-<style>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MLBB Tournament</title><style>
 :root{--red:#fe1b0a;--blue:#215aa8;--silver:#c9cdd2;--dark:#11151d;--panel:#171a20}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;color:#11151d}
-body{background:#fff url("./bg.jpg") center/cover fixed no-repeat}.app{min-height:100vh;background:transparent;position:relative}
-.app:before{display:none}
+body{background:#fff url("https://raw.githubusercontent.com/ssekartadji5/Paragon-Sport-Community-Cup-Plant-2026-E-sport-ML/main/bg.jpg") center/cover fixed no-repeat;color:#111;font-family:Inter,Arial,sans-serif;margin:0;overflow-x:auto}
+body:before{content:"";position:fixed;inset:0;background:url("https://raw.githubusercontent.com/ssekartadji5/Paragon-Sport-Community-Cup-Plant-2026-E-sport-ML/main/bg.jpg") center/cover fixed no-repeat;opacity:1;z-index:-1;pointer-events:none}
+.app{position:relative;z-index:1}body:before{display:none!important}.app:before{display:none}
 header{position:relative;z-index:2;padding:18px 28px;border-bottom:2px solid #ffffffaa;display:flex;justify-content:space-between;align-items:center;background:#11151dea;color:#fff}
 h1{margin:0;font-size:24px;letter-spacing:1px}header small{color:#c8ccd4}.live{margin-left:auto;background:var(--red);padding:7px 12px;border-radius:999px;font-weight:800}
 .mode{display:flex;gap:6px;margin-left:auto;margin-right:12px}.mode button{background:#2a3039;color:#fff;border:1px solid #ffffff33;border-radius:6px;padding:7px 10px;font-size:10px;font-weight:800;cursor:pointer}.mode button.active{background:var(--red);border-color:var(--red)}#adminMode{font-size:0;width:38px;height:32px;display:flex;align-items:center;justify-content:center;padding:0;margin-left:10px}#adminMode:after{content:"☰";font-size:20px;line-height:1}
 .wrap{position:relative;z-index:1;padding:22px 24px}.hero{text-align:center;margin-bottom:16px}.eyebrow{font-size:11px;color:#4f555d;letter-spacing:2px;font-weight:800}.hero h2{font-size:34px;margin:4px 0}.hero p{margin:0;color:#555b64}
-.board{background:rgba(255,255,255,.72);border:2px solid #ffffffaa;border-radius:6px;padding:18px;overflow:auto;box-shadow:0 18px 50px #0004}
+ .board{background:rgba(255,255,255,.72);border:2px solid #ffffffaa;border-radius:6px;padding:18px;overflow:auto;box-shadow:0 18px 50px #0004}
 .rounds{display:grid;grid-template-columns:repeat(9,minmax(120px,1fr));gap:12px;min-width:1160px;height:650px}
-.round{position:relative;display:flex;flex-direction:column;height:100%;padding-top:30px;justify-content:space-around}.round h3{position:absolute;top:0;left:0;right:0;margin:0;color:#333840;font-size:10px;letter-spacing:1.4px;text-align:center;white-space:nowrap}.round.center{justify-content:center;padding-top:0}.round.center h3{color:var(--red)}
+ .round{position:relative;display:flex;flex-direction:column;height:100%;padding-top:30px;justify-content:space-around}.round h3{position:absolute;top:0;left:0;right:0;margin:0;color:#333840;font-size:10px;letter-spacing:1.4px;text-align:center;white-space:nowrap}.round.center{justify-content:center;padding-top:0}.round.center h3{color:var(--red)}
 .match{background:linear-gradient(145deg,#3d4249,#20242a);border:1px solid #aeb4bb;border-radius:5px;padding:6px;box-shadow:0 5px 14px #0005}.left .match{border-left-color:var(--red)}.right .match{border-right-color:var(--blue)}
-.team{display:flex;justify-content:space-between;align-items:center;padding:5px 6px;background:#5b6067;color:#fff;border-radius:3px;margin:2px 0;min-height:25px;font-size:10px;line-height:1.1;white-space:nowrap;overflow:hidden}.team.win{border-left:3px solid var(--red);background:#4b3b3d}.score{font-weight:900;margin-left:5px}.status{font-size:7px;color:#c9cdd2;margin-top:4px}
-.grandbox,.thirdbox{border-radius:7px;padding:8px}.grandbox{background:linear-gradient(145deg,#f1f2f3,#c8ccd1);border:3px solid var(--red);color:#111;box-shadow:0 10px 25px #0005}.thirdbox{margin-top:14px;background:#111722;border:2px solid #e4a900;color:#fff}.grandtitle{background:var(--red);color:#fff;border-radius:4px;padding:5px;font-size:10px;font-weight:900}.gteam{display:flex;justify-content:space-between;background:#fff;margin-top:5px;padding:7px 6px;border-radius:3px;font-size:10px;font-weight:800}.champ{margin-top:7px;background:#111722;color:#ffcc33;border-radius:4px;padding:7px;font-size:10px;font-weight:900}
+.team{display:flex;justify-content:space-between;align-items:center;padding:5px 6px;background:#5b6067;color:#fff;border-radius:3px;margin:2px 0;min-height:25px;font-size:10px;line-height:1.1;white-space:nowrap;overflow:hidden}.team.win{border-left:3px solid var(--red);background:#4b3b3d}.score{font-weight:900;margin-left:5px}.status{font-size:7px;color:#c9cdd2;margin-top:4px}.early .score{display:none}
+.grandbox,.thirdbox{border-radius:7px;padding:8px}.grandbox{background:linear-gradient(145deg,#f1f2f3,#c8ccd1);border:3px solid var(--red);color:#111;box-shadow:0 10px 25px #0005}.thirdbox{margin-top:14px;background:#111722;border:2px solid #e4a900;color:#fff}.grandtitle{background:var(--red);color:#fff;border-radius:4px;padding:5px;font-size:10px;font-weight:900}.gteam{display:flex;justify-content:space-between;background:#fff;margin-top:5px;padding:7px 6px;border-radius:3px;font-size:10px;font-weight:800}.thirdbox .gteam{color:#111}.champ{margin-top:7px;background:#111722;color:#ffcc33;border-radius:4px;padding:7px;font-size:10px;font-weight:900}
 .admin-only{margin-top:22px;background:#090b10e8;border:1px solid #ffffff18;border-radius:16px;padding:20px;color:#fff}.team-grid{display:grid;grid-template-columns:repeat(4,minmax(110px,1fr));gap:8px}.team-grid input,.controls input,.controls select{background:#151922;color:#fff;border:1px solid #ffffff25;border-radius:7px;padding:10px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.btn{background:var(--red);color:#fff;border:0;border-radius:7px;padding:10px 14px;font-weight:800;cursor:pointer}.btn.blue{background:var(--blue)}.note{margin-top:14px;color:#aeb4c0;font-size:12px}
 .is-tv .admin-only{display:none}.is-tv header{padding:12px 24px}.is-tv .wrap{padding:12px 16px}.is-tv .hero{margin-bottom:8px}.is-tv .hero h2{font-size:28px}.is-tv .rounds{height:calc(100vh - 150px)}
 @media(max-width:700px){header{padding:16px}.wrap{padding:16px}.hero h2{font-size:26px}.rounds{min-width:1160px}.team-grid{grid-template-columns:repeat(2,minmax(110px,1fr))}}
@@ -26,9 +21,9 @@ h1{margin:0;font-size:24px;letter-spacing:1px}header small{color:#c8ccd4}.live{m
 </head>
 <body>
 <main class="app">
-<header><div><h1>Sport Community Cup Plant - 2026</h1><small>PARAGON E-SPORT • Mobile Legend Tournament</small></div><div class="live" id="liveBadge">● LIVE</div><button type="button" id="adminMode" aria-label="Buka Admin Control" title="Admin Control">ADMIN</button></header>
+<header><div><h1>Sport Community Cup Plant - 2026</h1><small>PARAGON E-SPORT • <span id="gameHeader">Mobile Legend Tournament</span></small></div><div class="mode"><button type="button" id="mlMode" class="active">MOBILE LEGEND</button><button type="button" id="psMode">PS CONSOLE</button></div><div class="live" id="liveBadge">● LIVE</div><button type="button" id="adminMode" aria-label="Buka Admin Control" title="Admin Control">ADMIN</button></header>
 <div class="wrap">
-<section class="hero"><div><h2>MOBILE LEGEND - ROUND OF 32</h2></div></section>
+<section class="hero"><div><h2><span id="gameTitle">MOBILE LEGEND</span> - ROUND OF 32</h2></div></section>
 <section class="board"><div class="rounds" id="bracket"></div></section>
 <section class="admin-only">
 <div class="eyebrow">ADMIN CONTROL</div><h3 style="margin:6px 0">TOURNAMENT SETUP</h3>
@@ -36,82 +31,500 @@ h1{margin:0;font-size:24px;letter-spacing:1px}header small{color:#c8ccd4}.live{m
 <div class="controls"><button class="btn" id="generate">GENERATE BRACKET</button><button class="btn blue" id="reset">RESET</button></div>
 <hr style="border:0;border-top:1px solid #ffffff14;margin:18px 0">
 <div class="eyebrow">LIVE MATCH UPDATE</div>
-<div class="controls"><select id="matchSelect"></select><input id="teamA" placeholder="Team A"><input id="teamB" placeholder="Team B"><input id="scoreA" type="number" min="0" value="0"><input id="scoreB" type="number" min="0" value="0"></div>
+<div class="controls"><select id="matchSelect"></select><input id="teamA" placeholder="Team A"><input id="teamB" placeholder="Team B"><input id="scoreA" class="scoreInput" type="number" min="0" value="0"><input id="scoreB" class="scoreInput" type="number" min="0" value="0"></div>
 <div class="controls"><button class="btn" id="update">UPDATE LIVE SCORE</button><button class="btn blue" id="finish">FINISH MATCH</button></div>
 <hr style="border:0;border-top:1px solid #ffffff14;margin:18px 0">
-<div class="eyebrow">THIRD PLACE</div><div class="controls"><input id="thirdPlace" placeholder="Nama Juara 3"><button class="btn" id="saveThird">SAVE THIRD PLACE</button></div>
-<div class="note">Data saat ini tersimpan di browser. Realtime antar perangkat akan kita hubungkan setelah tampilan bracket beres.</div>
+<div class="eyebrow">THIRD PLACE</div><div class="note">Tim yang kalah di semifinal otomatis masuk ke Third Place Match. Juara 3 ditentukan dari hasil pertandingan ini.</div>
 </section>
 </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
 const defaults=Array.from({length:32},(_,i)=>"Team "+String(i+1).padStart(2,"0"));
 const roundDefs=[{title:"ROUND OF 32",count:16,start:1},{title:"ROUND OF 16",count:8,start:17},{title:"QUARTER FINAL",count:4,start:25},{title:"SEMIFINAL",count:2,start:29},{title:"GRAND FINAL",count:1,start:31}];
 let matches=[],currentMatch=1,thirdPlace="";
 const $=id=>document.getElementById(id);
-function setMode(mode){document.body.className=mode==="tv"?"is-tv":"is-admin";$("adminMode").classList.toggle("active",mode==="admin");try{localStorage.setItem("bracketMode",mode)}catch(e){}}
-function buildInputs(){ $("teamInputs").innerHTML=defaults.map((x,i)=>'<input class="teamInput" data-i="'+i+'" value="'+x+'">').join(""); }
+const SUPABASE_URL="https://tyuswzuswdhavbrtuzzd.supabase.co";
+const SUPABASE_KEY="sb_publishable_o_y4SJPaiNhjtrt5y-ruNA_izK0V7Bu";
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let cloudReady=false;
+let realtimeChannel=null;
+
+function roundName(id){
+ if(id<=16)return"ROUND OF 32";
+ if(id<=24)return"ROUND OF 16";
+ if(id<=28)return"QUARTER FINAL";
+ if(id<=30)return"SEMIFINAL";
+ if(id===31)return"GRAND FINAL";
+ return"THIRD PLACE";
+}
+
+async function loadGameFromCloud(game){
+ cloudReady=false;
+ const {data,error}=await supabaseClient.from("matches").select("*").eq("game",game).order("match_no",{ascending:true});
+ if(error){
+  console.error("Supabase load error:",error);
+  $("liveBadge").textContent="● LOCAL";
+  return;
+ }
+ if(Array.isArray(data)&&data.length){
+  matches=data.map(r=>({
+   id:r.match_no,
+   a:r.team_a||"TBD",
+   b:r.team_b||"TBD",
+   sa:r.score_a===null?null:Number(r.score_a),
+   sb:r.score_b===null?null:Number(r.score_b),
+   status:r.status||"UPCOMING",
+   winner:r.winner||null
+  }));
+
+  while(matches.length<32)
+   matches.push({
+    id:matches.length+1,
+    a:"TBD",
+    b:"TBD",
+    sa:null,
+    sb:null,
+    status:"UPCOMING",
+    winner:null
+   });
+
+  const first16=matches.slice(0,16);
+  const inputs=[...document.querySelectorAll(".teamInput")];
+
+  first16.forEach((m,i)=>{
+   if(inputs[i*2])inputs[i*2].value=m.a==="TBD"?"":m.a;
+   if(inputs[i*2+1])inputs[i*2+1].value=m.b==="TBD"?"":m.b;
+  });
+
+  thirdPlace=(matches.find(m=>m.id===32)||{}).winner||"";
+  fillSelect();
+  render();
+  loadMatch(currentMatch);
+ }
+ cloudReady=true;
+}
+
+async function saveGameToCloud(){
+ if(!cloudReady)return;
+
+ const rows=matches.map(m=>({
+  game:currentGame,
+  match_no:m.id,
+  round:roundName(m.id),
+  team_a:m.a||"TBD",
+  team_b:m.b||"TBD",
+  score_a:m.sa,
+  score_b:m.sb,
+  status:m.status||"UPCOMING",
+  winner:m.winner||null
+ }));
+
+ const {error}=await supabaseClient
+  .from("matches")
+  .upsert(rows,{onConflict:"game,match_no"});
+
+ if(error)console.error("Supabase save error:",error);
+}
+
+function startRealtime(){
+ if(realtimeChannel)return;
+
+ realtimeChannel=supabaseClient
+  .channel("scc-matches-live")
+  .on(
+   "postgres_changes",
+   {
+    event:"*",
+    schema:"public",
+    table:"matches"
+   },
+   payload=>{
+    const row=payload.new;
+
+    if(!row||row.game!==currentGame)return;
+
+    const m=matches.find(x=>x.id===row.match_no);
+    if(!m)return;
+
+    m.a=row.team_a||"TBD";
+    m.b=row.team_b||"TBD";
+    m.sa=row.score_a===null?null:Number(row.score_a);
+    m.sb=row.score_b===null?null:Number(row.score_b);
+    m.status=row.status||"UPCOMING";
+    m.winner=row.winner||null;
+
+    if(row.match_no===32)
+     thirdPlace=row.winner||thirdPlace;
+
+    render();
+    loadMatch(currentMatch);
+   }
+  )
+  .subscribe(status=>{
+   if(status==="SUBSCRIBED")
+    $("liveBadge").textContent="● LIVE";
+  });
+}
+
+function setMode(mode){
+ document.body.className=mode==="tv"?"is-tv":"is-admin";
+ $("adminMode").classList.toggle("active",mode==="admin");
+
+ try{
+  localStorage.setItem("bracketMode",mode);
+ }catch(e){}
+}
+
+function buildInputs(){
+ $("teamInputs").innerHTML=defaults
+  .map((x,i)=>'<input class="teamInput" data-i="'+i+'" value="'+x+'">')
+  .join("");
+}
+
 function initMatches(){
- const names=[...document.querySelectorAll(".teamInput")].map((el,i)=>el.value.trim()||"TBD "+String(i+1).padStart(2,"0"));
+ const names=[...document.querySelectorAll(".teamInput")]
+  .map((el,i)=>el.value.trim()||"TBD "+String(i+1).padStart(2,"0"));
+
  matches=[];
- for(let i=0;i<16;i++)matches.push({id:i+1,a:names[i*2],b:names[i*2+1],sa:null,sb:null,status:"UPCOMING",winner:null});
- for(let i=17;i<=30;i++)matches.push({id:i,a:"TBD",b:"TBD",sa:null,sb:null,status:"UPCOMING",winner:null});
- matches.push({id:31,a:"TBD",b:"TBD",sa:null,sb:null,status:"UPCOMING",winner:null});
- matches.push({id:32,a:"TBD",b:"TBD",sa:null,sb:null,status:"UPCOMING",winner:null});
- fillSelect();render();loadMatch(1);
+
+ for(let i=0;i<16;i++)
+  matches.push({
+   id:i+1,
+   a:names[i*2],
+   b:names[i*2+1],
+   sa:null,
+   sb:null,
+   status:"UPCOMING",
+   winner:null
+  });
+
+ for(let i=17;i<=30;i++)
+  matches.push({
+   id:i,
+   a:"TBD",
+   b:"TBD",
+   sa:null,
+   sb:null,
+   status:"UPCOMING",
+   winner:null
+  });
+
+ matches.push({
+  id:31,
+  a:"TBD",
+  b:"TBD",
+  sa:null,
+  sb:null,
+  status:"UPCOMING",
+  winner:null
+ });
+
+ matches.push({
+  id:32,
+  a:"TBD",
+  b:"TBD",
+  sa:null,
+  sb:null,
+  status:"UPCOMING",
+  winner:null
+ });
+
+ fillSelect();
+ render();
+ loadMatch(1);
 }
-function fillSelect(){ $("matchSelect").innerHTML=matches.map(m=>'<option value="'+m.id+'">'+(m.id===32?"THIRD PLACE MATCH":"Match "+String(m.id).padStart(2,"0"))+"</option>").join(""); }
-function status(m){return m.status==="FINISHED"?"FINISHED":m.a!=="TBD"&&m.b!=="TBD"?"READY":"UPCOMING";}
-function card(m,side){return '<div class="match"><div class="team '+(m.winner===m.a?"win":"")+'">'+m.a+' <span class="score">'+(m.sa===null?"—":m.sa)+'</span></div><div class="team '+(m.winner===m.b?"win":"")+'">'+m.b+' <span class="score">'+(m.sb===null?"—":m.sb)+'</span></div><div class="status">'+status(m)+' • M'+String(m.id).padStart(2,"0")+'</div></div>';}
-function column(title,ids,side){return '<div class="round '+side+'"><h3>'+title+'</h3>'+ids.map(id=>card(matches.find(m=>m.id===id),side)).join("")+'</div>';}
+
+function fillSelect(){
+ $("matchSelect").innerHTML=matches
+  .map(m=>'<option value="'+m.id+'">'+
+   (m.id===32?"THIRD PLACE MATCH":"Match "+String(m.id).padStart(2,"0"))+
+   "</option>")
+  .join("");
+}
+
+function status(m){
+ return m.status==="FINISHED"
+  ?"FINISHED"
+  :m.a!=="TBD"&&m.b!=="TBD"
+   ?"READY"
+   :"UPCOMING";
+}
+
+function card(m,side){
+ const early=m.id<=28;
+
+ return '<div class="match '+(early?"early":"")+'">'+
+  '<div class="team '+(m.winner===m.a?"win":"")+'">'+
+   m.a+
+   ' <span class="score">'+(m.sa===null?"—":m.sa)+'</span>'+
+  '</div>'+
+  '<div class="team '+(m.winner===m.b?"win":"")+'">'+
+   m.b+
+   ' <span class="score">'+(m.sb===null?"—":m.sb)+'</span>'+
+  '</div>'+
+  '<div class="status">'+status(m)+' • M'+String(m.id).padStart(2,"0")+'</div>'+
+ '</div>';
+}
+
+function column(title,ids,side){
+ return '<div class="round '+side+'">'+
+  '<h3>'+title+'</h3>'+
+  ids.map(id=>card(matches.find(m=>m.id===id),side)).join("")+
+ '</div>';
+}
+
 function render(){
- const gf=matches.find(m=>m.id===31),tp=matches.find(m=>m.id===32);
- const center='<div class="round center"><h3>GRAND FINAL</h3><div class="grandbox"><div class="grandtitle">GRAND FINAL • LIVE</div><div class="gteam">'+gf.a+' <b>'+(gf.sa===null?0:gf.sa)+'</b></div><div class="gteam">'+gf.b+' <b>'+(gf.sb===null?0:gf.sb)+'</b></div><div class="champ">JUARA 1 • '+(gf.winner||"TBD")+'</div></div><div class="thirdbox"><div class="grandtitle">THIRD PLACE MATCH • LIVE</div><div class="gteam">'+tp.a+' <b>'+(tp.sa===null?0:tp.sa)+'</b></div><div class="gteam">'+tp.b+' <b>'+(tp.sb===null?0:tp.sb)+'</b></div><div class="champ">JUARA 3 • '+(tp.winner||thirdPlace||"TBD")+'</div></div></div>';
+ const gf=matches.find(m=>m.id===31);
+ const tp=matches.find(m=>m.id===32);
+
+ const center=
+  '<div class="round center">'+
+   '<h3>GRAND FINAL</h3>'+
+   '<div class="grandbox">'+
+    '<div class="grandtitle">GRAND FINAL • LIVE</div>'+
+    '<div class="gteam">'+gf.a+' <b>'+(gf.sa===null?0:gf.sa)+'</b></div>'+
+    '<div class="gteam">'+gf.b+' <b>'+(gf.sb===null?0:gf.sb)+'</b></div>'+
+    '<div class="champ">JUARA 1 • '+(gf.winner||"TBD")+'</div>'+
+   '</div>'+
+   '<div class="thirdbox">'+
+    '<div class="grandtitle">THIRD PLACE MATCH • LIVE</div>'+
+    '<div class="gteam">'+tp.a+' <b>'+(tp.sa===null?0:tp.sa)+'</b></div>'+
+    '<div class="gteam">'+tp.b+' <b>'+(tp.sb===null?0:tp.sb)+'</b></div>'+
+    '<div class="champ">JUARA 3 • '+(tp.winner||thirdPlace||"TBD")+'</div>'+
+   '</div>'+
+  '</div>';
+
  $("bracket").innerHTML=
- column("ROUND OF 32",[1,2,3,4,5,6,7,8],"left")+
- column("ROUND OF 16",[17,18,19,20],"left")+
- column("QUARTER FINAL",[25,26],"left")+
- column("SEMIFINAL",[29],"left")+
- center+
- column("SEMIFINAL",[30],"right")+
- column("QUARTER FINAL",[27,28],"right")+
- column("ROUND OF 16",[21,22,23,24],"right")+
- column("ROUND OF 32",[9,10,11,12,13,14,15,16],"right");
+  column("ROUND OF 32",[1,2,3,4,5,6,7,8],"left")+
+  column("ROUND OF 16",[17,18,19,20],"left")+
+  column("QUARTER FINAL",[25,26],"left")+
+  column("SEMIFINAL",[29],"left")+
+  center+
+  column("SEMIFINAL",[30],"right")+
+  column("QUARTER FINAL",[27,28],"right")+
+  column("ROUND OF 16",[21,22,23,24],"right")+
+  column("ROUND OF 32",[9,10,11,12,13,14,15,16],"right");
 }
+
 function loadMatch(id){
- const m=matches.find(x=>x.id===id);if(!m)return;
- currentMatch=id;$("matchSelect").value=id;$("teamA").value=m.a==="TBD"?"":m.a;$("teamB").value=m.b==="TBD"?"":m.b;$("scoreA").value=m.sa===null?0:m.sa;$("scoreB").value=m.sb===null?0:m.sb;
+ const m=matches.find(x=>x.id===id);
+ if(!m)return;
+
+ currentMatch=id;
+
+ $("matchSelect").value=id;
+ $("teamA").value=m.a==="TBD"?"":m.a;
+ $("teamB").value=m.b==="TBD"?"":m.b;
+ $("scoreA").value=m.sa===null?0:m.sa;
+ $("scoreB").value=m.sb===null?0:m.sb;
+
+ document.querySelectorAll(".scoreInput")
+  .forEach(el=>el.style.display=id<=28?"none":"block");
 }
+
 function next(id){
- if(id>=1&&id<=16)return{id:17+Math.floor((id-1)/2),slot:(id-1)%2===0?"a":"b"};
- if(id>=17&&id<=24)return{id:25+Math.floor((id-17)/2),slot:(id-17)%2===0?"a":"b"};
- if(id>=25&&id<=28)return{id:29+Math.floor((id-25)/2),slot:(id-25)%2===0?"a":"b"};
- if(id>=29&&id<=30)return{id:31,slot:id===29?"a":"b"};
+ if(id>=1&&id<=16)
+  return{
+   id:17+Math.floor((id-1)/2),
+   slot:(id-1)%2===0?"a":"b"
+  };
+
+ if(id>=17&&id<=24)
+  return{
+   id:25+Math.floor((id-17)/2),
+   slot:(id-17)%2===0?"a":"b"
+  };
+
+ if(id>=25&&id<=28)
+  return{
+   id:29+Math.floor((id-25)/2),
+   slot:(id-25)%2===0?"a":"b"
+  };
+
+ if(id>=29&&id<=30)
+  return{
+   id:31,
+   slot:id===29?"a":"b"
+  };
+
  return null;
 }
+
 function update(){
- const m=matches.find(x=>x.id===currentMatch);if(!m)return;
- m.a=$("teamA").value.trim()||m.a;m.b=$("teamB").value.trim()||m.b;m.sa=Math.max(0,Number($("scoreA").value)||0);m.sb=Math.max(0,Number($("scoreB").value)||0);render();
-}
-function finish(){
- const m=matches.find(x=>x.id===currentMatch);if(!m)return;
- const a=$("teamA").value.trim(),b=$("teamB").value.trim(),sa=Math.max(0,Number($("scoreA").value)||0),sb=Math.max(0,Number($("scoreB").value)||0);
- if(!a||!b){alert("Kedua tim harus tersedia.");return} if(sa===sb){alert("Skor tidak boleh seri.");return}
- m.a=a;m.b=b;m.sa=sa;m.sb=sb;m.status="FINISHED";m.winner=sa>sb?a:b;
- if(m.id===29||m.id===30){const tp=matches.find(x=>x.id===32);tp[m.id===29?"a":"b"]=sa>sb?b:a;}
- else{const n=next(m.id);if(n){const nm=matches.find(x=>x.id===n.id);if(nm)nm[n.slot]=m.winner;}}
+ const m=matches.find(x=>x.id===currentMatch);
+ if(!m)return;
+
+ if(m.id<=28){
+  m.a=$("teamA").value.trim()||m.a;
+  m.b=$("teamB").value.trim()||m.b;
+
+  render();
+  saveGameToCloud();
+  return;
+ }
+
+ m.a=$("teamA").value.trim()||m.a;
+ m.b=$("teamB").value.trim()||m.b;
+ m.sa=Math.max(0,Number($("scoreA").value)||0);
+ m.sb=Math.max(0,Number($("scoreB").value)||0);
+
  render();
- if(m.id===31)$("liveBadge").textContent="● CHAMPION";
- else if(m.id===29||m.id===30)loadMatch(32);
- else{const n=next(m.id);if(n)loadMatch(n.id);}
+ saveGameToCloud();
 }
-buildInputs();initMatches();
-$("generate").onclick=initMatches;$("reset").onclick=()=>{buildInputs();thirdPlace="";initMatches()};
-$("matchSelect").onchange=e=>loadMatch(Number(e.target.value));$("update").onclick=update;$("finish").onclick=finish;
-$("saveThird").onclick=()=>{const v=$("thirdPlace").value.trim();if(!v){alert("Nama Juara 3 harus diisi.");return}thirdPlace=v;const tp=matches.find(x=>x.id===32);tp.winner=v;tp.status="FINISHED";render()};
-$("adminMode").onclick=()=>{const p=prompt("Masukkan password Admin");if(p==="SCC2026"){setMode("admin")}else if(p!==null){alert("Password salah.")}};
+
+function finish(){
+ const m=matches.find(x=>x.id===currentMatch);
+ if(!m)return;
+
+ if(m.id<=28){
+  const a=$("teamA").value.trim();
+  const b=$("teamB").value.trim();
+
+  if(!a||!b){
+   alert("Kedua tim harus tersedia.");
+   return;
+  }
+
+  const choice=prompt("Masukkan pemenang: A atau B");
+  if(choice===null)return;
+
+  const winner=choice.trim().toUpperCase();
+
+  if(winner!=="A"&&winner!=="B"){
+   alert("Pilih A atau B.");
+   return;
+  }
+
+  m.a=a;
+  m.b=b;
+  m.status="FINISHED";
+  m.winner=winner==="A"?a:b;
+
+  const n=next(m.id);
+
+  if(n){
+   const nm=matches.find(x=>x.id===n.id);
+   if(nm)nm[n.slot]=m.winner;
+  }
+
+  render();
+  saveGameToCloud();
+
+  const n2=next(m.id);
+  if(n2)loadMatch(n2.id);
+
+  return;
+ }
+
+ const a=$("teamA").value.trim();
+ const b=$("teamB").value.trim();
+ const sa=Math.max(0,Number($("scoreA").value)||0);
+ const sb=Math.max(0,Number($("scoreB").value)||0);
+
+ if(!a||!b){
+  alert("Kedua tim harus tersedia.");
+  return;
+ }
+
+ if(sa===sb){
+  alert("Skor tidak boleh seri.");
+  return;
+ }
+
+ m.a=a;
+ m.b=b;
+ m.sa=sa;
+ m.sb=sb;
+ m.status="FINISHED";
+ m.winner=sa>sb?a:b;
+
+ if(m.id===29||m.id===30){
+  const tp=matches.find(x=>x.id===32);
+  tp[m.id===29?"a":"b"]=sa>sb?b:a;
+ }else{
+  const n=next(m.id);
+
+  if(n){
+   const nm=matches.find(x=>x.id===n.id);
+   if(nm)nm[n.slot]=m.winner;
+  }
+ }
+
+ render();
+ saveGameToCloud();
+
+ if(m.id===31){
+  $("liveBadge").textContent="● CHAMPION";
+ }else if(m.id===29||m.id===30){
+  loadMatch(32);
+ }else{
+  const n=next(m.id);
+  if(n)loadMatch(n.id);
+ }
+}
+
+let currentGame="ml";
+
+async function setGame(game){
+ currentGame=game;
+
+ const ml=game==="ml";
+
+ $("mlMode").classList.toggle("active",ml);
+ $("psMode").classList.toggle("active",!ml);
+
+ $("gameHeader").textContent=
+  ml?"Mobile Legend Tournament":"PS Console Tournament";
+
+ $("gameTitle").textContent=
+  ml?"MOBILE LEGEND":"PS CONSOLE";
+
+ buildInputs();
+ initMatches();
+
+ await loadGameFromCloud(game);
+}
+
+buildInputs();
+initMatches();
+
+$("mlMode").onclick=()=>setGame("ml");
+$("psMode").onclick=()=>setGame("ps");
+
+$("generate").onclick=()=>{
+ initMatches();
+ saveGameToCloud();
+};
+
+$("reset").onclick=()=>{
+ buildInputs();
+ thirdPlace="";
+ initMatches();
+ saveGameToCloud();
+};
+
+$("matchSelect").onchange=e=>
+ loadMatch(Number(e.target.value));
+
+$("update").onclick=update;
+$("finish").onclick=finish;
+
+$("adminMode").onclick=()=>{
+ const p=prompt("Masukkan password Admin");
+
+ if(p==="SCC2026"){
+  setMode("admin");
+ }else if(p!==null){
+  alert("Password salah.");
+ }
+};
+
 setMode("tv");
+startRealtime();
+loadGameFromCloud(currentGame);
+
 })();
 </script>
 </body>
