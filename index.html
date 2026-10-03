@@ -110,8 +110,8 @@ buildInputs();initMatches();
 $("generate").onclick=initMatches;$("reset").onclick=()=>{buildInputs();thirdPlace="";initMatches()};
 $("matchSelect").onchange=e=>loadMatch(Number(e.target.value));$("update").onclick=update;$("finish").onclick=finish;
 $("saveThird").onclick=()=>{const v=$("thirdPlace").value.trim();if(!v){alert("Nama Juara 3 harus diisi.");return}thirdPlace=v;const tp=matches.find(x=>x.id===32);tp.winner=v;tp.status="FINISHED";render()};
-$("adminMode").onclick=()=>setMode("admin");$("tvMode").onclick=()=>setMode("tv");
-let saved="admin";try{saved=localStorage.getItem("bracketMode")||"admin"}catch(e){}setMode(saved);
+$("adminMode").onclick=()=>{const p=prompt("Masukkan password Admin");if(p==="SCC2026"){setMode("admin")}else if(p!==null){alert("Password salah.")}};$("tvMode").onclick=()=>setMode("tv");
+setMode("tv");
 })();
 </script>
 </body>
