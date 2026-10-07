@@ -495,16 +495,25 @@ initMatches();
 $("mlMode").onclick=()=>setGame("ml");
 $("psMode").onclick=()=>setGame("ps");
 
-$("generate").onclick=()=>{
+$("generate").onclick=async()=>{
+ thirdPlace="";
  initMatches();
- saveGameToCloud();
+ render();
+ fillSelect();
+ loadMatch(1);
+ await saveGameToCloud();
+ await loadGameFromCloud(currentGame);
 };
 
-$("reset").onclick=()=>{
+$("reset").onclick=async()=>{
  buildInputs();
  thirdPlace="";
  initMatches();
- saveGameToCloud();
+ render();
+ fillSelect();
+ loadMatch(1);
+ await saveGameToCloud();
+ await loadGameFromCloud(currentGame);
 };
 
 $("matchSelect").onchange=e=>
