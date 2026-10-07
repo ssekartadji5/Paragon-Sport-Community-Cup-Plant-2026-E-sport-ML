@@ -286,7 +286,7 @@ function render(){
     '<div class="grandtitle">GRAND FINAL • LIVE</div>'+
     '<div class="gteam">'+gf.a+' <b>'+(gf.sa===null?0:gf.sa)+'</b></div>'+
     '<div class="gteam">'+gf.b+' <b>'+(gf.sb===null?0:gf.sb)+'</b></div>'+
-    '<div class="champ">JUARA 1 • '+(gf.winner||"TBD")+'</div>'+
+    '<div class="champ">JUARA 1 • '+(gf.status==="FINISHED"&&gf.winner?gf.winner:"TBD")+'</div>'+
    '</div>'+
    '<div class="thirdbox">'+
     '<div class="grandtitle">THIRD PLACE MATCH • LIVE</div>'+
