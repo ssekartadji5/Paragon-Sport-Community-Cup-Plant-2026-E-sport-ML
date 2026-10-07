@@ -442,7 +442,9 @@ function finish(){
 
  if(m.id===29||m.id===30){
   const tp=matches.find(x=>x.id===32);
+  const gf=matches.find(x=>x.id===31);
   tp[m.id===29?"a":"b"]=sa>sb?b:a;
+  if(gf)gf[m.id===29?"a":"b"]=m.winner;
  }else{
   const n=next(m.id);
 
