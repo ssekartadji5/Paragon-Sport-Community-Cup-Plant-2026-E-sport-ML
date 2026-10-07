@@ -113,9 +113,14 @@ async function loadGameFromCloud(game){
   });
 
   thirdPlace=(matches.find(m=>m.id===32)||{}).winner||"";
+  syncDerivedMatches();
   fillSelect();
   render();
   loadMatch(currentMatch);
+  cloudReady=true;
+  syncDerivedMatches();
+  await saveGameToCloud();
+  render();
  }
  cloudReady=true;
 }
@@ -474,6 +479,7 @@ function finish(){
   }
  }
 
+ syncDerivedMatches();
  render();
  saveGameToCloud();
 
