@@ -276,8 +276,12 @@ function column(title,ids,side){
 }
 
 function render(){
+ const sfLeft=matches.find(m=>m.id===29);
+ const sfRight=matches.find(m=>m.id===30);
  const gf=matches.find(m=>m.id===31);
  const tp=matches.find(m=>m.id===32);
+ if(sfLeft&&sfLeft.status==="FINISHED"&&sfLeft.winner)gf.a=sfLeft.winner;
+ if(sfRight&&sfRight.status==="FINISHED"&&sfRight.winner)gf.b=sfRight.winner;
 
  const center=
   '<div class="round center">'+
