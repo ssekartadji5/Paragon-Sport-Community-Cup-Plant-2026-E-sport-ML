@@ -480,8 +480,13 @@ async function finish(){
  if(m.id===29||m.id===30){
   const tp=matches.find(x=>x.id===32);
   const gf=matches.find(x=>x.id===31);
-  tp[m.id===29?"a":"b"]=sa>sb?b:a;
-  if(gf)gf[m.id===29?"a":"b"]=m.winner;
+  const winnerSlot=m.id===29?"a":"b";
+  const loser=sa>sb?b:a;
+  if(gf)gf[winnerSlot]=m.winner;
+  if(tp)tp[winnerSlot]=loser;
+  if(gf){
+   gf.status=gf.status==="FINISHED"?"FINISHED":"UPCOMING";
+  }
  }else{
   const n=next(m.id);
 
@@ -494,6 +499,7 @@ async function finish(){
  syncDerivedMatches();
  render();
  await saveGameToCloud();
+ render();
 
  if(m.id===31){
   $("liveBadge").textContent="● CHAMPION";
