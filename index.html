@@ -68,20 +68,25 @@ function syncDerivedMatches(){
  const gf=matches.find(m=>m.id===31);
  const tp=matches.find(m=>m.id===32);
  if(!gf||!tp)return;
- if(sfLeft&&sfLeft.status==="FINISHED"&&sfLeft.winner){
-  gf.a=sfLeft.winner;
-  tp.a=sfLeft.winner===sfLeft.a?sfLeft.b:sfLeft.a;
- }else{
-  gf.a="TBD";
-  tp.a="TBD";
- }
- if(sfRight&&sfRight.status==="FINISHED"&&sfRight.winner){
-  gf.b=sfRight.winner;
-  tp.b=sfRight.winner===sfRight.a?sfRight.b:sfRight.a;
- }else{
-  gf.b="TBD";
-  tp.b="TBD";
- }
+
+ // Use the saved winner when available; fall back to the semifinal score
+ // so older database rows still populate the final bracket correctly.
+ const resolveWinner=m=>{
+  if(!m||m.status!=="FINISHED")return null;
+  if(m.winner)return m.winner;
+  if(m.sa===null||m.sb===null||m.sa===m.sb)return null;
+  return m.sa>m.sb?m.a:m.b;
+ };
+ const leftWinner=resolveWinner(sfLeft);
+ const rightWinner=resolveWinner(sfRight);
+
+ gf.a=leftWinner||"TBD";
+ gf.b=rightWinner||"TBD";
+ tp.a=leftWinner&&sfLeft?(leftWinner===sfLeft.a?sfLeft.b:sfLeft.a):"TBD";
+ tp.b=rightWinner&&sfRight?(rightWinner===sfRight.a?sfRight.b:sfRight.a):"TBD";
+
+ if(leftWinner&&sfLeft&&!sfLeft.winner)sfLeft.winner=leftWinner;
+ if(rightWinner&&sfRight&&!sfRight.winner)sfRight.winner=rightWinner;
 }
 
 async function loadGameFromCloud(game){
