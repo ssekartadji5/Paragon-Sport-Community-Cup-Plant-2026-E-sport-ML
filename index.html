@@ -411,7 +411,7 @@ function update(){
  saveGameToCloud();
 }
 
-function finish(){
+async function finish(){
  const m=matches.find(x=>x.id===currentMatch);
  if(!m)return;
 
